@@ -9,7 +9,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!username || !password){
+    if(username=="" || !password==""){
       setError("Both username and password are required.")
     }
     else{
