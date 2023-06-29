@@ -9,7 +9,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(username=="" || !password==""){
+    if(!username || !password){
       setError("Both username and password are required.")
     }
     else{
@@ -26,7 +26,9 @@ const App = () => {
           <br/>
           <label htmlFor="password" >Password: </label>
           <input type="password" id="password" onChange={(event) => setPassword(event.target.value)} />
-          <p id="errorMessage">{error}</p>
+          {
+            error ? <p id="errorMessage">{error}</p> : <p></p>
+          }
           <button type="submit">Login</button>
         </form>
     </div>
